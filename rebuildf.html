@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReBuild Platform</title>
+    <style>
+        body {
+            font-family: "Merriweather", serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #254d4d;
+        }
+
+        header {
+            background-color: #254d4d;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 162px;
+            height: 50px;
+        }
+
+        .navbar {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .navbar-item {
+            margin-right: 1rem;
+        }
+
+        .navbar-link {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .navbar-link:hover {
+            text-decoration: underline;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-action-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+
+        .btn {
+            background-color: #254d4d;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .btn span {
+            margin-right: 0.5rem;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        /* Section Styling */
+        .section {
+            margin: 2rem auto;
+            max-width: 1200px;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #254d4d;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .grid-item {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-item h3 {
+            margin: 0.5rem 0;
+            color: #254d4d;
+        }
+
+        .grid-item p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .grid-item button {
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: #254d4d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .grid-item button:hover {
+            background-color: #1f3e3e;
+        }
+
+        .header .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .header .nav-close-btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header" data-header>
+    <div class="container">
+        <a href="#" class="logo">
+            <img src="https://via.placeholder.com/162x50" alt="ReBuild logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a href="#home" class="navbar-link" data-nav-link>Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#about" class="navbar-link" data-nav-link>About</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#courses" class="navbar-link" data-nav-link>Courses</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="header-action-btn" aria-label="search" title="Search">
+                <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+            </button>
+            <button class="header-action-btn" aria-label="cart" title="Cart">
+                <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+                <span class="btn-badge">0</span>
+            </button>
+            <a href="#" class="btn has-before">
+                <span class="span">Try for free</span>
+                <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+            <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+            </button>
+        </div>
+    </div>
+</header>
+
+<section class="section">
+    <h2>Online Mock Interviews</h2>
+    <div class="grid">
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="Frontend Development">
+            <h3>Frontend Development</h3>
+            <p>Prepare for HTML, CSS, and JS interviews.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="Backend Development">
+            <h3>Backend Development</h3>
+            <p>Practice API design and server-side logic.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="Data Structures">
+            <h3>Data Structures</h3>
+            <p>Sharpen your problem-solving skills.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="Machine Learning">
+            <h3>Machine Learning</h3>
+            <p>Mock interviews focused on AI/ML roles.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="System Design">
+            <h3>System Design</h3>
+            <p>Learn to design scalable systems.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="DevOps">
+            <h3>DevOps</h3>
+            <p>Simulate real-world deployment challenges.</p>
+            <button>Learn More</button>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Offered Courses</h2>
+    <div class="grid">
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="Full Stack Development">
+            <h3>Full Stack Development</h3>
+            <p>Master frontend and backend technologies.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="Data Science">
+            <h3>Data Science</h3>
+            <p>Learn Python, R, and data visualization.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="Cloud Computing">
+            <h3>Cloud Computing</h3>
+            <p>Understand AWS, Azure, and GCP basics.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="Cybersecurity">
+            <h3>Cybersecurity</h3>
+            <p>Protect systems against modern threats.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/150" alt="Mobile App Development">
+            <h3>Mobile App Development</h3>
+            <p>Create apps for Android and iOS.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="grid-item">
+            <img src="https://
+            <section class="section">
+              <h2>Virtual Networking Rooms</h2>
+              <div class="grid">
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Tech Networking">
+                      <h3>Tech Networking</h3>
+                      <p>Connect with professionals in the tech industry.</p>
+                      <button>Join Now</button>
+                  </div>
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Career Coaching">
+                      <h3>Career Coaching</h3>
+                      <p>Get advice from experienced career coaches.</p>
+                      <button>Join Now</button>
+                  </div>
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Women in Tech">
+                      <h3>Women in Tech</h3>
+                      <p>Join a supportive network for women in technology.</p>
+                      <button>Join Now</button>
+                  </div>
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Job Seekers">
+                      <h3>Job Seekers</h3>
+                      <p>Meet potential employers and hiring managers.</p>
+                      <button>Join Now</button>
+                  </div>
+              </div>
+          </section>
+          
+          <section class="section">
+              <h2>Workshops</h2>
+              <div class="grid">
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Resume Building">
+                      <h3>Resume Building</h3>
+                      <p>Improve your resume with expert feedback.</p>
+                      <button>Learn More</button>
+                  </div>
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Interview Preparation">
+                      <h3>Interview Preparation</h3>
+                      <p>Get ready for your next job interview.</p>
+                      <button>Learn More</button>
+                  </div>
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Personal Branding">
+                      <h3>Personal Branding</h3>
+                      <p>Build a strong online presence to stand out.</p>
+                      <button>Learn More</button>
+                  </div>
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Career Growth">
+                      <h3>Career Growth</h3>
+                      <p>Learn strategies for advancing in your career.</p>
+                      <button>Learn More</button>
+                  </div>
+              </div>
+          </section>
+          
+          <section class="section">
+              <h2>Confidence Booster</h2>
+              <div class="grid">
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Motivational Talks">
+                      <h3>Motivational Talks</h3>
+                      <p>Listen to inspiring stories from successful professionals.</p>
+                      <button>Join Now</button>
+                  </div>
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Mindfulness Sessions">
+                      <h3>Mindfulness Sessions</h3>
+                      <p>Learn techniques to boost mental well-being and confidence.</p>
+                      <button>Join Now</button>
+                  </div>
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Self-Care Practices">
+                      <h3>Self-Care Practices</h3>
+                      <p>Discover practices that will keep you calm and focused.</p>
+                      <button>Join Now</button>
+                  </div>
+                  <div class="grid-item">
+                      <img src="https://via.placeholder.com/150" alt="Confidence Building Workshops">
+                      <h3>Confidence Building Workshops</h3>
+                      <p>Participate in workshops that will help you build self-assurance.</p>
+                      <button>Join Now</button>
+                  </div>
+              </div>
+          </section>

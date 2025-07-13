@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+:root {
+    --primary-color: #254d4d;
+    --secondary-color: #333;
+    --background-color: #f4f7f6;
+    --white: #ffffff;
+    --input-border: #ccc;
+    --hover-color: #45a049;
+    --header-font: "Merriweather", serif;
+    --body-font: 'Merriweather', serif;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  header.container {
+    display: flex;  /* Use flexbox to arrange the items in a row */
+    align-items: center;  /* Vertically center the items */
+    gap: 20px;  /* Add space between the logo and heading */
+    padding: 10px 0;  /* Add some padding around the header */
+    background-color: #254d4d;  /* Optional: Background color for the header */
+    position: sticky;  /* Keeps the header at the top while scrolling */
+    top: 0;  /* Ensures it's fixed at the top */
+    z-index: 1000;  /* Makes sure it's above other content */
+    
+
+  }
+  
+  .logo {
+    width: 120px;  /* Adjust the width as needed */
+    height: auto;  /* Maintains aspect ratio */
+    margin: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: #f4f7f6;  /* Remove the margin-bottom since we're aligning them in a row */
+  }
+  .form-container {
+    margin-top: 20px;  /* Adds space between header and the form */
+    max-width: 800px; /* Limits the width of the form */
+    margin: 20px auto; /* Centers the container with white space on both sides */
+    padding: 20px;
+  }
+  body {
+    font-family: var(--body-font);
+    margin: 0;
+    padding: 0;
+    position: relative; /* Needed for the pseudo-element to work */
+    min-height: 100vh; /* Ensures the body takes at least the viewport height */
+    overflow-x: hidden; /* Prevents horizontal scrolling in case of image misalignment */
+  }
+  .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Black overlay with 30% opacity */
+    z-index: -1; /* Ensure it's behind the content */
+}
+  body::before {
+    content: ''; /* Creates a pseudo-element for the blurred background */
+    position: fixed; /* Makes the background stay in place during scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpg') no-repeat center center fixed; /* Add your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    filter: blur(10px); /* Blurs the background image */
+    z-index: -1; /* Keeps the background behind all other content */
+  }
+  
+  label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: var(--secondary-color);
+  }
+  
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0 20px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    font-family: var(--body-font);
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: var(--header-font);
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0000;
+  }
+  
+  fieldset {
+    border: 2px solid var(--primary-color);
+    border-radius: px;
+    padding: 20px;
+    margin-bottom: 20px;
+    
+  }
+  
+  legend {
+    font-weight: bold;
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    padding: 20 10px;
+  }
+
+
+  .footer {
+    background-color: var(--primary-color);
+  }
+  
+  .footer__container {
+    display: grid;
+    gap: 4rem 2rem;
+  }
+  
+  .footer__logo {
+    margin-bottom: 1rem;
+  }
+  
+  .footer__logo .logo {
+    color: var(--white);
+  }
+  
+  .footer__col p {
+    margin-bottom: 2rem;
+    color: var(--extra-light);
+    opacity: 0.8;
+  }
+  
+  .footer__socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .footer__socials a {
+    font-size: 1.5rem;
+    color: var(--white);
+  }
+  
+  .footer__socials a:hover {
+    opacity: 0.5;
+  }
+  
+  .footer__col h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--white);
+  }
+  
+  .footer__links {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .footer__links a {
+    color: var(--extra-light);
+    opacity: 0.8;
+  }
+  
+  .footer__links a:hover {
+    opacity: 1;
+  }
+  
+  .footer__bar {
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--extra-light);
+    opacity: 0.8;
+    text-align: center;
+  }
+
+  @media (width > 540px) {
+    .footer__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (width > 768px) {
+    
+  
+    .footer__container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
