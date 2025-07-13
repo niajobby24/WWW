@@ -1,5 +1,5 @@
 
-# ** Women Who Work 🎯**
+# **Women Who Work 🎯**
 Basic Details
 Team Name: Code Explorers 
 Team Members
